@@ -1,0 +1,50 @@
+{
+  "thursday": {
+    "morning": {
+      "psalms": ["41"],
+      "firstLesson": "Dan 9",
+      "secondLesson": "John 13:1-20"
+    },
+    "evening": {
+      "psalms": ["142", "143"],
+      "firstLesson": "1 Cor 10:1-22",
+      "secondLesson": "John 13:21-38"
+    }
+  },
+  "friday": {
+    "morning": {
+      "psalms": ["40"],
+      "firstLesson": "Lam 3:1-36",
+      "secondLesson": "John 18"
+    },
+    "evening": {
+      "psalms": ["102"],
+      "firstLesson": "1 Pet 2:11-25",
+      "secondLesson": "Luke 23:18-49"
+    }
+  },
+  "saturday": {
+    "morning": {
+      "psalms": ["88"],
+      "firstLesson": "Lam 3:37-58",
+      "secondLesson": "Heb 4"
+    },
+    "evening": {
+      "psalms": ["91"],
+      "firstLesson": "1 Pet 4:1-8",
+      "secondLesson": "Luke 23:50-56"
+    }
+  },
+  "sunday": {
+    "morning": {
+      "psalms": ["118"],
+      "firstLesson": "Exod 15",
+      "secondLesson": "Acts 2:22-32"
+    },
+    "evening": {
+      "psalms": ["111, 113, 114"],
+      "firstLesson": "Rom 6",
+      "secondLesson": "Luke 24:13-43"
+    }
+  }
+}

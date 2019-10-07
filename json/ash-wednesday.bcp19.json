@@ -1,0 +1,12 @@
+{
+  "morning": {
+    "psalms": ["38"],
+    "firstLesson": "Isa 58:1-12",
+    "secondLesson": "Luke 18:9-14"
+  },
+  "evening": {
+    "psalms": ["6", "32"],
+    "firstLesson": "Jonah 3:6-10",
+    "secondLesson": "1 Cor 9:24-27"
+  }
+}
