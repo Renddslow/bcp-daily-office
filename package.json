@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "node parse.js",
-    "start": "node server.js"
+    "start": "node server.js",
+	"publish:docker": "gcloud builds submit --tag gcr.io/flatland-api/bcp-daily-office"
   }
 }
