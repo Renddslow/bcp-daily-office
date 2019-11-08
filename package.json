@@ -1,19 +1,19 @@
 {
+  "version": "1.0.1",
   "dependencies": {
     "body-parser": "^1.19.0",
     "books-of-the-bible": "^1.1.0",
     "cors": "^2.8.5",
     "moment": "^2.24.0",
-    "pdf2html": "^2.5.0",
     "polka": "^0.5.2",
-    "random-int": "^2.0.1",
-    "unique-random": "^2.1.0",
+    "slugify": "^1.3.6",
     "verse-reference-regex": "^1.3.0",
     "world-english-bible": "^1.0.0"
   },
   "scripts": {
-    "build": "node parse.js",
+    "build:regex": "node utils/makeRegex.js",
     "start": "node server.js",
-	"publish:docker": "gcloud builds submit --tag gcr.io/flatland-api/bcp-daily-office"
+    "postinstall": "yarn build:regex",
+    "publish:docker": "gcloud builds submit --tag gcr.io/flatland-api/bcp-daily-office"
   }
 }

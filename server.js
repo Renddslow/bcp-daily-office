@@ -5,6 +5,7 @@ const cors = require('cors');
 const getTodayData = require('./lib/getTodayData');
 const getCollect = require('./lib/getCollect');
 const parseVerseData = require('./lib/parseVerseData');
+const version = require('./package').version;
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,12 +23,16 @@ const json = (req, res, next) => {
 polka()
   .use(cors(), bodyParser.json(), json)
   .get('/days/:date', async (req, res) => {
-    const { meta, attributes } = await getTodayData(req.params.date, req.query);
+    const { meta: todayMeta, attributes } = await getTodayData(req.params.date, req.query);
     const content = parseVerseData(attributes);
     const [morning, evening] = await Promise.all([
       getCollect(req.params.date, 'morning'),
       getCollect(req.params.date, 'evening'),
     ]);
+
+    const meta = Object.assign({}, todayMeta, {
+      version,
+    });
 
     await res.json({
       data: {
@@ -41,5 +46,8 @@ polka()
         }),
       },
     });
+  })
+  .get('/festivals/:slug', (req, res) => {
+
   })
   .listen(PORT, () => console.log(`🙏 Daily Office API running on port ${PORT}`));
