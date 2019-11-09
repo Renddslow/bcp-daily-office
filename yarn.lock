@@ -43,6 +43,14 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
+changelog-parser@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/changelog-parser/-/changelog-parser-2.8.0.tgz#c14293e3e8fab797913c722de965480198650108"
+  integrity sha512-ZtSwN0hY7t+WpvaXqqXz98RHCNhWX9HsvCRAv1aBLlqJ7BpKtqdM6Nu6JOiUhRAWR7Gov0aN0fUnmflTz0WgZg==
+  dependencies:
+    line-reader "^0.2.4"
+    remove-markdown "^0.2.2"
+
 content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
@@ -100,6 +108,11 @@ inherits@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
+
+line-reader@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/line-reader/-/line-reader-0.2.4.tgz#c4392b587dea38580c9678570e6e8e49fce52622"
+  integrity sha1-xDkrWH3qOFgMlnhXDm6OSfzlJiI=
 
 matchit@^1.0.0:
   version "1.0.8"
@@ -174,6 +187,11 @@ regex-fun@~2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/regex-fun/-/regex-fun-2.0.2.tgz#0eeac0699b8e2619934f1e89fc982b08b3d2f3ff"
   integrity sha512-QG/HjMuNfEHLJgj7hgGxYKRDpiDJJRWbJPSK4bO9xxRMcwgVvLqGssytQEuM7gc5yIDFWsgmtr1B/4yAqyai8A==
+
+remove-markdown@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.2.2.tgz#66b0ceeba9fb77ca9636bb1b0307ce21a32a12a6"
+  integrity sha1-ZrDO66n7d8qWNrsbAwfOIaMqEqY=
 
 "safer-buffer@>= 2.1.2 < 3":
   version "2.1.2"

@@ -6,6 +6,7 @@ const getTodayData = require('./lib/getTodayData');
 const getCollect = require('./lib/getCollect');
 const parseVerseData = require('./lib/parseVerseData');
 const version = require('./package').version;
+const { versions, get: getVersion } = require('./utils/changelog');
 
 const PORT = process.env.PORT || 8080;
 
@@ -35,6 +36,11 @@ polka()
     });
 
     await res.json({
+      meta: Object.assign({}, meta, {
+        devNotes: [
+          '`meta` object within data was a bug and has been deprecated. Expect removal with v2.'
+        ]
+      }),
       data: {
         meta,
         attributes: Object.assign({}, {
@@ -47,7 +53,51 @@ polka()
       },
     });
   })
-  .get('/festivals/:slug', (req, res) => {
-
+  .get('/festivals/:slug', async (req, res) => {
+    const { slug } = req.params;
+    await res.json({
+      meta: { version },
+      data: {
+        attributes: {},
+      },
+    });
+  })
+  .get('/resources', (req, res) => {
+    return res.json({
+      meta: { version },
+      data: [
+        {
+          id: 'apostles-creed',
+          type: 'creed',
+        },
+        {
+          id: 'nicene-creed',
+          type: 'creed',
+        },
+      ],
+    });
+  })
+  .get('/resources/:slug', () => {})
+  .get('/versions', async (req, res) => {
+    try {
+      res.json({
+        data: await versions(),
+      });
+    } catch (e) {
+      res.json({
+        errors: [e],
+      });
+    }
+  })
+  .get('/versions/:version', async (req, res) => {
+    try {
+      res.json({
+        data: await getVersion(req.params.version),
+      });
+    } catch (e) {
+      res.json({
+        errors: [e],
+      });
+    }
   })
   .listen(PORT, () => console.log(`🙏 Daily Office API running on port ${PORT}`));

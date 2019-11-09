@@ -7,9 +7,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Added
 
+- Added a method for fetching all the previous versions and a specific version. `/versions` and `versions/:version`.
+
 ### Changed
 
 ### Deprecated
+
+- The `meta` field inside of the `data` object in the fetch day method. Expected removal in v2.0.0.
 
 ### Removed
 
